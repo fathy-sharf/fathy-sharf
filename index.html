@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>فتحي شرف | Fathy Sharf — مجموعه ألين (ALIEN GROUP)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #061218;
+      --card-bg: rgba(9, 24, 32, 0.88);
+      --box-bg: rgba(7, 19, 26, 0.72);
+      --cyan: #18d2f0;
+      --cyan-glow: rgba(24, 210, 240, 0.35);
+      --cyan-border: rgba(24, 210, 240, 0.45);
+      --text-main: #f4f9fb;
+      --text-muted: #9eb7c2;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Cairo', sans-serif;
+      background: radial-gradient(circle at top center, #0e3645 0%, #061218 55%, #030a0e 100%);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      padding: 20px 14px 40px;
+      line-height: 1.6;
+    }
+    .container {
+      width: 100%;
+      max-width: 460px;
+      background: var(--card-bg);
+      border: 1px solid var(--cyan-border);
+      border-radius: 22px;
+      padding: 28px 20px 24px;
+      box-shadow: 0 0 35px rgba(0, 0, 0, 0.75), inset 0 0 18px rgba(24, 210, 240, 0.08);
+      backdrop-filter: blur(12px);
+    }
+    .header { text-align: center; margin-bottom: 22px; }
+    .logo-wrap {
+      width: 112px;
+      height: 112px;
+      margin: 0 auto 14px;
+      border-radius: 50%;
+      padding: 3px;
+      background: linear-gradient(135deg, var(--cyan), #0a586b);
+      box-shadow: 0 0 24px var(--cyan-glow);
+      overflow: hidden;
+    }
+    .logo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      background: #000;
+      display: block;
+    }
+    .group-tag {
+      font-size: 0.85rem;
+      color: var(--cyan);
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      margin-bottom: 2px;
+    }
+    h1 {
+      font-size: 1.65rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 2px;
+    }
+    .en-name {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.85rem;
+      color: var(--cyan);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .subtitle {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+    .btn-primary {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      background: linear-gradient(90deg, #12c2e9, #18d2f0);
+      color: #03131a;
+      font-family: 'Cairo', sans-serif;
+      font-weight: 800;
+      font-size: 1rem;
+      padding: 13px 16px;
+      border-radius: 12px;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 0 22px var(--cyan-glow);
+      transition: transform 0.2s, box-shadow 0.2s;
+      margin-bottom: 10px;
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 30px rgba(24, 210, 240, 0.6);
+    }
+    .action-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+    .btn-secondary {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      background: var(--box-bg);
+      border: 1px solid var(--cyan-border);
+      color: var(--text-main);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.92rem;
+      padding: 11px 12px;
+      border-radius: 11px;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .btn-secondary:hover {
+      background: rgba(24, 210, 240, 0.12);
+      border-color: var(--cyan);
+    }
+    .section-title {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--cyan);
+      margin-bottom: 12px;
+      padding-right: 4px;
+    }
+    .pillar-card {
+      background: var(--box-bg);
+      border: 1px solid rgba(24, 210, 240, 0.3);
+      border-radius: 14px;
+      padding: 16px;
+      margin-bottom: 14px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+      transition: border-color 0.25s;
+    }
+    .pillar-card:hover {
+      border-color: var(--cyan);
+    }
+    .pillar-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+    .pillar-title {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1.35;
+    }
+    .pillar-badge {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--cyan);
+      text-align: left;
+      line-height: 1.3;
+      flex-shrink: 0;
+    }
+    .pillar-desc {
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+      line-height: 1.55;
+    }
+    .pillar-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.84rem;
+      font-weight: 700;
+      color: var(--cyan);
+      text-decoration: none;
+    }
+    .pillar-link:hover { text-decoration: underline; }
+    .badges-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 22px;
+    }
+    .cred-chip {
+      font-size: 0.75rem;
+      background: rgba(24, 210, 240, 0.08);
+      border: 1px solid rgba(24, 210, 240, 0.25);
+      color: #d6eef5;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-weight: 600;
+    }
+    .social-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-bottom: 22px;
+    }
+    .social-btn {
+      background: var(--box-bg);
+      border: 1px solid rgba(24, 210, 240, 0.3);
+      color: var(--text-main);
+      text-decoration: none;
+      text-align: center;
+      padding: 9px 6px;
+      border-radius: 10px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      transition: all 0.2s;
+    }
+    .social-btn:hover {
+      border-color: var(--cyan);
+      color: var(--cyan);
+      background: rgba(24, 210, 240, 0.1);
+    }
+
+    .wa-modal-backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(2, 9, 13, 0.82);
+      backdrop-filter: blur(6px);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      animation: fadeIn 0.18s ease-out;
+    }
+    .wa-modal-backdrop.open {
+      display: flex;
+    }
+    .wa-modal {
+      width: 100%;
+      max-width: 380px;
+      background: #081a23;
+      border: 1px solid var(--cyan);
+      border-radius: 18px;
+      padding: 20px 18px 18px;
+      box-shadow: 0 0 35px rgba(24, 210, 240, 0.28), 0 12px 30px rgba(0, 0, 0, 0.85);
+      text-align: center;
+    }
+    .wa-modal-title {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 4px;
+    }
+    .wa-modal-sub {
+      font-size: 0.82rem;
+      color: var(--cyan);
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+    .wa-modal-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+    .wa-num-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: var(--box-bg);
+      border: 1px solid rgba(24, 210, 240, 0.4);
+      color: var(--text-main);
+      text-decoration: none;
+      padding: 12px 8px;
+      border-radius: 12px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      transition: all 0.2s;
+    }
+    .wa-num-btn span {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.8rem;
+      color: var(--cyan);
+      direction: ltr;
+      margin-top: 4px;
+    }
+    .wa-num-btn:hover {
+      background: rgba(24, 210, 240, 0.16);
+      border-color: var(--cyan);
+      transform: translateY(-2px);
+    }
+    .wa-close-btn {
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      color: var(--text-muted);
+      font-family: 'Cairo', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 7px 18px;
+      border-radius: 9px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .wa-close-btn:hover {
+      border-color: var(--cyan);
+      color: #fff;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .footer {
+      text-align: center;
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 14px;
+    }
+    .footer a { color: var(--cyan); text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="logo-wrap">
+        <img src="data:image/webp;base64,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" alt="مجموعه ألين - فتحي شرف" />
+      </div>
+      <div class="group-tag">مجموعه ألين • ALIEN GROUP</div>
+      <h1>فتحي شرف</h1>
+      <div class="en-name">Fathy Sharf</div>
+      <div class="subtitle">محامٍ وباحث علوم جنائية | المؤسس والرئيس التنفيذي</div>
+    </div>
+
+    <button class="btn-primary" onclick="downloadVCard()">
+      <span>+ حفظ جهة الاتصال (Save Contact)</span>
+    </button>
+
+    <div class="action-row">
+      <a href="tel:+201033321868" class="btn-secondary">📞 اتصل مباشرة</a>
+      <button type="button" class="btn-secondary" style="font-family: 'Cairo', sans-serif; cursor: pointer;" onclick="openWaModal('تواصل مباشر عبر واتساب', 'أهلاً أستاذ فتحي شرف، أتواصل معك من خلال كارتك الرقمي')">💬 واتساب</button>
+    </div>
+
+    <div class="section-title">الركائز الأساسية والمشاريع</div>
+
+    <div class="pillar-card">
+      <div class="pillar-header">
+        <div class="pillar-title">الممارسة القانونية والاستشارات</div>
+        <div class="pillar-badge">المحاماة والعلوم<br>الجنائية</div>
+      </div>
+      <div class="pillar-desc">
+        الدفاع الجنائي، قضايا الأحداث، نزاعات اتحاد الشاغلين، صياغة ومراجعة العقود، والشؤون القانونية للمؤسسات والشركات في مصر (باحث ماجستير في العلوم الجنائية والقانون العام).
+      </div>
+      <a href="#" onclick="openWaModal('طلب استشارة قانونية', 'أهلاً أستاذ فتحي، أرغب في طلب استشارة قانونية'); return false;" class="pillar-link">طلب استشارة قانونية ←</a>
+    </div>
+
+    <div class="pillar-card">
+      <div class="pillar-header">
+        <div class="pillar-title">الموشن جرافيك والهوية البصرية والتسويق</div>
+        <div class="pillar-badge">Motion & Media<br>Buying Studio</div>
+      </div>
+      <div class="pillar-desc">
+        تصميم إعلانات الموشن جرافيك الاحترافية (After Effects)، إخراج الأنيميشن وتقنية إيقاف الحركة (Stop-Motion)، تصميم الشعارات والهويات البصرية، وإدارة الحملات الإعلانية الممولة (Media Buying).
+      </div>
+      <a href="#" onclick="openWaModal('مشروع موشن جرافيك أو هوية بصرية', 'أهلاً أستاذ فتحي، أرغب في بدء مشروع موشن جرافيك أو تسويق'); return false;" class="pillar-link">ابدأ مشروعاً إبداعياً ←</a>
+    </div>
+
+    <div class="pillar-card">
+      <div class="pillar-header">
+        <div class="pillar-title">التدريب وتيسير البرامج التنموية</div>
+        <div class="pillar-badge">التدريب وبناء<br>القدرات</div>
+      </div>
+      <div class="pillar-desc">
+        مدرب وميسر معتمد في التوجيه المهني (Career Coaching)، المهارات الحياتية، السياسات العامة، التحول الرقمي، التوعية المجتمعية وسلامة المرضى بالتعاون مع الجهات المحلية والدولية.
+      </div>
+      <a href="#" onclick="openWaModal('حجز ورشة عمل أو دورة تدريبية', 'أهلاً أستاذ فتحي، أرغب في التنسيق لورشة عمل أو تدريب'); return false;" class="pillar-link">احجز ورشة عمل / دورة تدريبية ←</a>
+    </div>
+
+    <div class="pillar-card">
+      <div class="pillar-header">
+        <div class="pillar-title">مشاريع مجموعه ألين</div>
+        <div class="pillar-badge">ريادة الأعمال<br>والمشاريع</div>
+      </div>
+      <div class="pillar-desc">
+        إدارة العمليات التجارية متعددة القطاعات، التجارة الإلكترونية، والحلول اللوجستية والتدريبية (ALIEN TRANSPORT • Alien For Training • Alien Car • Alien For Clothes).
+      </div>
+      <a href="#" onclick="openWaModal('الأعمال وشراكات مجموعه ألين', 'أهلاً أستاذ فتحي، أرغب في التواصل بخصوص شراكات مجموعه ألين'); return false;" class="pillar-link">الأعمال والشراكات ←</a>
+    </div>
+
+    <div class="section-title">الاعتمادات والشهادات البارزة</div>
+    <div class="badges-wrap">
+      <span class="cred-chip">ماجستير العلوم الجنائية والقانون العام</span>
+      <span class="cred-chip">السفارة الأمريكية بالقاهرة (2026)</span>
+      <span class="cred-chip">السفارة الهولندية - السياسات العامة</span>
+      <span class="cred-chip">اليونيسف & GIZ & مودة</span>
+      <span class="cred-chip">صندوق مكافحة الإدمان</span>
+      <span class="cred-chip">سفراء سلامة المرضى - وزارة الصحة</span>
+      <span class="cred-chip">معهد دون بوسكو (امتياز)</span>
+      <span class="cred-chip">الطب الشرعي ومسرح الجريمة</span>
+    </div>
+
+    <div class="section-title">اتصل عبر الإنترنت</div>
+    <div class="social-grid">
+      <a href="https://www.linkedin.com/in/fathy-sharf" target="_blank" class="social-btn">LinkedIn</a>
+      <a href="https://www.facebook.com/share/14v3unXYNHK/" target="_blank" class="social-btn">Facebook</a>
+      <a href="https://www.instagram.com/fathy.sharf" target="_blank" class="social-btn">Instagram</a>
+      <a href="https://www.tiktok.com/@fathysharf8" target="_blank" class="social-btn">TikTok</a>
+      <a href="https://x.com/sharf_fathy" target="_blank" class="social-btn">X / Twitter</a>
+      <a href="mailto:fathysharf3@gmail.com" class="social-btn">Email</a>
+    </div>
+
+    <div class="footer">
+      © 2026 فتحي شرف — مجموعه ألين | الإسكندرية، مصر<br>
+      <a href="mailto:fathysharf3@gmail.com">fathysharf3@gmail.com</a><br><a href="tel:+201033321868">01033321868</a> • <a href="tel:+201150788253">01150788253</a>
+    </div>
+  </div>
+
+  <div id="waModalBackdrop" class="wa-modal-backdrop" onclick="closeWaModal(event)">
+    <div class="wa-modal" onclick="event.stopPropagation()">
+      <div class="wa-modal-title">اختر رقم الواتساب للتواصل</div>
+      <div id="waModalTopic" class="wa-modal-sub">تواصل مباشر عبر واتساب</div>
+      <div class="wa-modal-grid">
+        <a id="waLinkPrimary" href="#" target="_blank" class="wa-num-btn" onclick="closeWaModal()">
+          💬 واتساب الأساسي
+          <span>01033321868</span>
+        </a>
+        <a id="waLinkSecondary" href="#" target="_blank" class="wa-num-btn" onclick="closeWaModal()">
+          💬 واتساب الثاني
+          <span>01150788253</span>
+        </a>
+      </div>
+      <button type="button" class="wa-close-btn" onclick="closeWaModal()">إغلاق</button>
+    </div>
+  </div>
+
+  <script>
+
+    function openWaModal(topic, message) {
+      const encoded = encodeURIComponent(message);
+      document.getElementById('waModalTopic').textContent = topic;
+      document.getElementById('waLinkPrimary').href = 'https://wa.me/201033321868?text=' + encoded;
+      document.getElementById('waLinkSecondary').href = 'https://wa.me/201150788253?text=' + encoded;
+      document.getElementById('waModalBackdrop').classList.add('open');
+    }
+
+    function closeWaModal() {
+      document.getElementById('waModalBackdrop').classList.remove('open');
+    }
+
+    function downloadVCard() {
+      const vcard = [
+        'BEGIN:VCARD',
+        'VERSION:3.0',
+        'N:شرف;فتحي;;;',
+        'FN:فتحي شرف | Fathy Sharf',
+        'ORG:مجموعه ألين | ALIEN GROUP',
+        'TITLE:محامٍ وباحث علوم جنائية | مدرب ومصمم موشن جرافيك',
+        'TEL;TYPE=CELL,VOICE:+201033321868',
+        'TEL;TYPE=CELL,VOICE:+201150788253',
+        'EMAIL;TYPE=PREF,INTERNET:fathysharf3@gmail.com',
+        'EMAIL;TYPE=INTERNET:ff83506@gmail.com',
+        'ADR;TYPE=WORK:;;سيدي بشر قبلي;الإسكندرية;;مصر',
+        'URL:https://www.linkedin.com/in/fathy-sharf',
+        'END:VCARD'
+      ].join('\n');
+      const blob = new Blob([vcard], { type: 'text/vcard;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'Fathy_Sharf.vcf';
+      a.click();
+      URL.revokeObjectURL(url);
+    }
+  </script>
+</body>
+</html>
